@@ -14,9 +14,9 @@ import {
 } from 'looker-lens'
 
 // User defined components.
-import { AddTodo } from './components/AddTodo'
-import { Rule } from './components/Rule'
-import { TodoList } from './components/TodoList'
+import { AddTodo } from '../components/AddTodo'
+import { Divider } from '../components/Divider'
+import { TodoList } from '../components/TodoList'
 
 // Some useful utilities.
 import
@@ -25,10 +25,10 @@ import
   TodoAppState,
   todoFromStr,
   Todos,
-} from './utils/todo_utils'
+} from '../utils/todo_utils'
 
 // Some data to seed app with.
-import { todoItems } from './utils/todo_items'
+import { todoItems } from '../utils/todo_items'
 
 /**
  * Every React app is itself a component. Here we will define a basic container component,
@@ -114,7 +114,7 @@ export default class LensTodo extends React.Component<{}, TodoAppState> {
                 <TodoList updateTodo={this.updateTodo}
                           removeTodo={this.removeTodo}
                           todos={activeTodos}/>
-                <Rule />
+                <Divider />
                 <Flex justifyContent="center">
                   <Button variant="transparent"
                           size="small"

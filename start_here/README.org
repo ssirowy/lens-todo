@@ -1,4 +1,4 @@
-* React/Lens TODO app
+* So much to do,  so little time
 
 [[../images/app.png]]
 
@@ -7,7 +7,7 @@
 A todo is a simple data structure that includes what needs to be done, whether it iss completed, and if completed, when it was completed.
 Your app should allow us to manage us a series of todos.
 
-Your app should support the following Ux:
+Your app should support the following features:
 1. List active todos.
 2. Complete todos by clicking on them (or using a checkbox). Remove todo from active list when completed.
 3. Be able to see completed todos. Show the date when the todo was completed.
@@ -19,7 +19,7 @@ defined interfaces that can be composed together.  We will talk about this as pa
 * Todo 1: Setting up skeleton project
 
 ** Install Yarn
-[[https://yarnpkg.com/en/][Yarn]] must be installed.  If yo don't have yarn installed , have a look at [[https://yarnpkg.com/en/docs/install][here]] and choose the appropriate installation for your environment.
+[[https://yarnpkg.com/en/][pYarn]] must be installed.  If yo don't have yarn installed , have a look at [[https://yarnpkg.com/en/docs/install][here]] and choose the appropriate installation for your environment.
 
 ** Configure gradle.properties file
 Lens needs to connect to Looker's private npm registry, powered by Nexus. Lens has some scripts that take care of this setup automatically,

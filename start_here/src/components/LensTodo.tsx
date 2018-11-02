@@ -17,10 +17,10 @@ import
 {
   TodoAppState,
   todoFromStr
-} from './utils/todo_utils'
+} from '../utils/todo_utils'
 
 // Some data to seed app with.
-import { todoItems } from './utils/todo_items'
+import { todoItems } from '../utils/todo_items'
 
 /**
  * Every React app is itself a component. Here we will define a basic container component,

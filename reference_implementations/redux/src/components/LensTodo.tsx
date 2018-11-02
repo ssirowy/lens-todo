@@ -16,7 +16,7 @@ import { AddTodo } from '../containers/AddTodo'
 import { CompletedTodos } from '../containers/CompletedTodos'
 import { FilteredTodos } from '../containers/FilteredTodos'
 import { ToggleCompletedButton } from '../containers/ToggleCompletedButton'
-import { Rule } from './Rule'
+import { Divider } from './Divider'
 
 /**
  * Every React app is itself a component. Here we will define a basic container component,
@@ -34,7 +34,7 @@ export const LensTodo = () => (
             </Flex>
             <AddTodo />
             <FilteredTodos completed={false} />
-            <Rule />
+            <Divider />
             <Flex justifyContent="center">
               <ToggleCompletedButton />
             </Flex>
