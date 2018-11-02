@@ -1,4 +1,20 @@
-# Lens Todo ap
+* React/Lens TODO app
 
-Stub
+[[..images/app.png]]
+
+* Setting up skeleton project
+
+** Install Yarn
+[[https://yarnpkg.com/en/][Yarn]] must be installed.  If yo don't have yarn installed , have a look at [[https://yarnpkg.com/en/docs/install][here]] and choose the appropriate installation for your environment.
+
+** Configure gradle.properties file
+Lens needs to connect to Looker's private npm registry, powered by Nexus. Lens has some scripts that take care of this setup automatically, 
+but they assume that some setup from Helltool has already been completed, specifically configuration of a gradle.properties file.
+
+If you have Helltool installed and running, you've likely already setup your gradle.properties file to connect to our Nexus server. 
+[If not take a look at the relevant Helltool directions and follow them so you can get the 
+Nexus server username and password first](https://github.com/looker/helltool#dependencies).
+
+
+
 
