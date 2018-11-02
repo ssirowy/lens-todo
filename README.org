@@ -1,8 +1,26 @@
-* Lens TODO app
+* React/Lens TODO app
 
 [[./images/app.png]]
 
 ** Goals
 - Learn how to build component-based React apps by building a fairly full featured todo app.
-- Apply Looker's Lens library to provide a nice consistent styling for your todo app.
+- Apply Looker's Lens library to provide a nice consistent styling for your todo app. (Bonus points if you *only* use Lens components)
 - Learn about some basic state management techniques by applying the Redux pattern to your todo app.
+
+** Structure
+- This top level directory has a few directories.  The directory `start_here` includes a skeleton project
+where you will begin your work. There is a README in that subdirectory that will give you instructions on how
+to get get going
+
+- This top level directory also includes a few reference implementations of the todo app that you can use if you get
+stuck. I do provide a disclaimer that I wrote thenm fairly quickly and do not guarantee they will be production
+quality. I have tried to document my code as much as possible for educational purposes.  If yuo find any glaring errors,
+please let me know!
+
+** Helpful references
+Here a few helpful references for you as you build out your todo app.
+
+1. [[https://reactjs.org/][ReactJS]] - Probably the best starting point for learning how to build React apps
+2. [[https://lens.looker.com/][Lens Docs]] - Catalogues and documents all Lens components you can use your in your app
+3. [[https://redux.js.org/][Redux]] - One of many state management tools you might choose to make your app more predictable and robust.  I have provided a reference app using Redux if you are interested.
+4. [[https://www.youtube.com/watch?v=34_L7t7fD_U][Simple made easy]] - Not directly related to this project,  but you should strive to make your components and app simple. Learn about what that means here.
