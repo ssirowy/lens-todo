@@ -74,8 +74,8 @@ built to have simple, well defined interfaces, and be inherently composable with
 You will see in the LensTodo.tsx that the app is itself a component that is composed of several Lens components.
 
 *** Challenges
-- [ ] Look at the Lens docs and instantiate a few more components inside the Card. Try different inputs to see what they do.
-- [ ] The LensTodo app is wrapped inside a `ThemeProvider` component which has a reference to a theme. 
+[ ] Look at the Lens docs and instantiate a few more components inside the Card. Try different inputs to see what they do.
+[ ] The LensTodo app is wrapped inside a `ThemeProvider` component which has a reference to a theme. 
       The theme itself has several defined palettes.  Try and change the background of the page by applying a `bg` prop to the top most `Flex` component in the component.
 
 * Todo 3: List todos
