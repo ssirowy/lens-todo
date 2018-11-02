@@ -2,6 +2,20 @@
 
 [[../images/app.png]]
 
+* App goals
+
+A todo is a simple data structure that includes what needs to be done, whether it iss completed, and if completed, when it was completed.
+Your app should allow us to manage us a series of todos.
+
+Your app should support the following Ux:
+1. List active todos.
+2. Complete todos by clicking on them (or using a checkbox). Remove todo from active list when completed.
+3. Be able to see completed todos. Show the date when the todo was completed.
+4. Remove todos that you are mistakes and/or want cleared from list.
+
+There are a lot of ways to build this in React, but you should strongly consider figuring out to break this into simple components with well
+defined interfaces that can be composed together.  We will talk about this as part of the initial talk before starting.
+
 * Todo 1: Setting up skeleton project
 
 ** Install Yarn
@@ -75,12 +89,41 @@ built to have simple, well defined interfaces, and be inherently composable with
 You will see in the LensTodo.tsx that the app is itself a component that is composed of several Lens components.
 
 *** Challenges
-- [ ] Look at the Lens docs and instantiate a few more components inside the Card. Try different inputs to see what they do.
-- [ ] The LensTodo app is wrapped inside a `ThemeProvider` component which has a reference to a theme. 
-      The theme itself has several defined palettes.  Try and change the background of the page by applying a `bg` prop to the top most `Flex` component in the component.
+- Look at the Lens docs and instantiate a few more components inside the Card. Try different inputs to see what they do.
+- The LensTodo app is wrapped inside a `ThemeProvider` component which has a reference to a theme.
+  The theme itself has several defined palettes.  Try and change the background of the page by applying a `bg` prop to the top most `Flex` component in the component.
 
 * Todo 3: List todos
-Fill me in
+
+To get started,  notice that the app already has a list of todo Items.
+
+#+BEGIN_SRC javascript
+
+// Initial state of app. This can come from anything (e.g local storage, a server call, etc)
+// but for simplicity we will simply set here every time we start app.
+this.state = {
+  showCompleted: false,
+  todos: todoItems.map(todoFromStr),
+}
+
+#+END_SRC
+
+In the app's render method,  try and output the first todo item's text.  Try the second.  Can you figure out how to output all of them?
+
+Once you've figured that out,  start considering how you can build a component that accepts an array of todos and lists all of them.  This will
+come in handy when we show both active and completed todo items in separate lists.
+
+#+BEGIN_SRC javascript
+
+class TodoList extends React.Component {
+  render() {
+    return (
+       // Something
+    )
+  }
+}
+
+#+END_SRC
 
 * Todo 4: Create new todos
 Fill me in
