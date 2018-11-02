@@ -1,0 +1,10 @@
+# Lens TODO app
+
+[[./images/app.png]]
+
+
+The goal of this project is:
+
+* Learn how to build component-based React apps by building a fairly full featured todo app.
+* Use Looker's Lens library to provide a nice consistent styling for your todo app.
+* Learn about some basic state management techniques by applying the Redux pattern to your todo app.
