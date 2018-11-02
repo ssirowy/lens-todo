@@ -15,10 +15,35 @@ If you have Helltool installed and running, you've likely already setup your gra
 [[https://github.com/looker/helltool#dependencies][If not take a look at the relevant Helltool directions and follow them so you can get the Nexus server username and password first]].
 
 
-** Clone this Repository and Setup
+** Clone this Repository and setup
 #+BEGIN_SRC bash
 git clone git@github.com:ssirowy/lens-todo.git
 yarn npmrc
 yarn
 yarn start
 #+END_SRC
+
+[[http://localhost:3000/][Open this and you should see a basic app.]]
+
+If all goes well you should see something that looks like this:
+
+[[../images/first.png]]
+
+* Have a look around
+Fill me in
+
+* List todos
+Fill me in
+
+* Create new todos
+Fill me in
+
+* Complete todos
+Fill me in
+
+* Filter todos
+Fill me in
+
+* State management?
+Fill me in
+
