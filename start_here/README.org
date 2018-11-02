@@ -34,16 +34,40 @@ I used a very helpful tool called [[https://github.com/facebook/create-react-app
 sets up a simple directory structure all of our code will go under the `src` directory.  Have a look in there.  I have provided some sample code
 you can start looking at.
 
-**** `src/index.tsx`
+*** Main source files
+**** src/index.tsx
    This was generated for me and instantiates our app.
-**** `src/LensTodo.tsx`
+**** src/LensTodo.tsx
    This file was initially generated and I have changed to illustrate some really basic usage of how to render a component and basic Lens component usage.
-**** `src/LensTodo.css`
+**** src/LensTodo.css
    I tried to keep my CSS usage down to a mininum to see what Lens provides out of the box, but in cerain cases I needed a little more flexibility.
    Try and make use of Lens default stylings as much as you can as you build.
-**** `src/utils/todo_utils.ts`
+**** src/utils/todo_utils.ts
    I have provided a number of todo utilities you might find useful, including helpful interfaces of a Todo item, an interface for our app state, and a
    a variety of other items.
+
+
+*** React apps
+There are much [[https://reactjs.org/][better treatments]] of what React is and how to build and render components, but here some basics.
+
+React is a small library that makes it easy to build UI components.  For those familiar with the MVC architecture,  
+React acts as the (V)iew layer. React provides a few simple mechanisms for defining how your component
+should be rendered.  One way is to create a Javscript class, like so:
+
+#+BEGIN_SRC javascript
+
+class MyComponent extends React.Component {
+  render() {
+    return (
+       <h1>My first React component</h1>
+    )
+  }
+}
+
+#+END_SRC
+
+*** Lens components
+[[https://lens.looker.com/][Look at Lens docs]] and try and add a few other components.  Try and instantiate those components with different 
 
 * Todo 3: List todos
 Fill me in
