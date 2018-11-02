@@ -2,16 +2,16 @@
 
 [[../images/app.png]]
 
-* Setting up skeleton project
+* Todo 1: Setting up skeleton project
 
 ** Install Yarn
 [[https://yarnpkg.com/en/][Yarn]] must be installed.  If yo don't have yarn installed , have a look at [[https://yarnpkg.com/en/docs/install][here]] and choose the appropriate installation for your environment.
 
 ** Configure gradle.properties file
-Lens needs to connect to Looker's private npm registry, powered by Nexus. Lens has some scripts that take care of this setup automatically, 
+Lens needs to connect to Looker's private npm registry, powered by Nexus. Lens has some scripts that take care of this setup automatically,
 but they assume that some setup from Helltool has already been completed, specifically configuration of a gradle.properties file.
 
-If you have Helltool installed and running, you've likely already setup your gradle.properties file to connect to our Nexus server. 
+If you have Helltool installed and running, you've likely already setup your gradle.properties file to connect to our Nexus server.
 [[https://github.com/looker/helltool#dependencies][If not take a look at the relevant Helltool directions and follow them so you can get the Nexus server username and password first]].
 
 
@@ -29,21 +29,33 @@ If all goes well you should see something that looks like this:
 
 [[../images/first.png]]
 
-* Have a look around
+* Todo 2: Get your bearings and have a look around
+I used a very helpful tool called [[https://github.com/facebook/create-react-app][Create React app]] to set up the basic React app skeleton for me and I chose to use Typescript.  The tool
+sets up a simple directory structure all of our code will go under the `src` directory.  Have a look in there.  I have provided some sample code
+you can start looking at.
+
+** src/index.tsx
+   This was generated for me and instantiates our app.
+** src/LensTodo.tsx
+   This file was initially generated and I have changed to illustrate some really basic usage of how to render a component and basic Lens component usage.
+** src/LensTodo.css
+   I tried to keep my CSS usage down to a mininum to see what Lens provides out of the box, but in cerain cases I needed a little more flexibility.
+   Try and make use of Lens default stylings as much as you can as you build.
+** src/utils/todo_utils.ts
+   I have provided a number of todo utilities you might find useful, including helpful interfaces of a Todo item, an interface for our app state, and a
+   a variety of other items.
+
+* Todo 3: List todos
 Fill me in
 
-* List todos
+* Todo 4: Create new todos
 Fill me in
 
-* Create new todos
+* Todo 5: Complete todos
 Fill me in
 
-* Complete todos
+* Todo 6: Filter todos
 Fill me in
 
-* Filter todos
+* Todo 7: State management?
 Fill me in
-
-* State management?
-Fill me in
-
