@@ -62,7 +62,7 @@ export class AddTodo extends React.Component<AddTodoProps, AddTodoState> {
         <Flex mt="medium">
           <Box className="todo-input-container">
             <FieldText value={input}
-                       placeholder="Add a to-do..."
+                       placeholder="Add a todo..."
                        onChange={this.onChange} />
           </Box>
           <Button size="small" disabled={input.length === 0}>Add it</Button>

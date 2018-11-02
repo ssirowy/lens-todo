@@ -14,24 +14,15 @@ import {
 } from 'redux'
 import * as reducers from './utils/reducers'
 
+import { todoItems } from './utils/todo_items'
 import { todoFromStr } from './utils/todo_utils'
 
 // App store
 const appReducers = combineReducers(reducers)
 
-
 const defaultState = {
   showCompleted: false,
-  todos: [
-    todoFromStr('Install base app'),
-    todoFromStr('Familiarize yourself with lens.looker.com'),
-    todoFromStr('List todos'),
-    todoFromStr('Create new todos'),
-    todoFromStr('Complete todos'),
-    todoFromStr('Filter todos'),
-    todoFromStr('State management?'),
-    todoFromStr('💰Profit'),
-  ]
+  todos: todoItems.map(todoFromStr),
 }
 
 const store = createStore(appReducers, defaultState)

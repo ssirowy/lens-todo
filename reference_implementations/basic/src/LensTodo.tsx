@@ -27,6 +27,9 @@ import
   Todos,
 } from './utils/todo_utils'
 
+// Some data to seed app with.
+import { todoItems } from './utils/todo_items'
+
 /**
  * Every React app is itself a component. Here we will define a basic container component,
  * an app state, and a composition of Lens and user defined components
@@ -41,16 +44,7 @@ export default class LensTodo extends React.Component<{}, TodoAppState> {
     // but for simplicity we will simply set here every time we start app.
     this.state = {
       showCompleted: false,
-      todos: [
-        todoFromStr('Install base app'),
-        todoFromStr('Familiarize yourself with lens.looker.com'),
-        todoFromStr('List todos'),
-        todoFromStr('Create new todos'),
-        todoFromStr('Complete todos'),
-        todoFromStr('Filter todos'),
-        todoFromStr('State management?'),
-        todoFromStr('💰Profit'),
-      ],
+      todos: todoItems.map(todoFromStr),
     }
   }
 

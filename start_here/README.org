@@ -45,7 +45,8 @@ you can start looking at and modifying.
 **** src/utils/todo_utils.ts
    I have provided a number of todo utilities you might find useful, including helpful interfaces of a Todo item, an interface for our app state, and a
    a variety of other items.
-
+**** src/utils/todo_items.ts
+   Here is the data to initially drive the todo list. It just so happens to be potential ordering for how to go about attacking building your app.
 
 *** React apps
 There are much [[https://reactjs.org/][better treatments]] of what React is and how to build, render, and compose components together, but here some basics.
@@ -66,7 +67,7 @@ class MyComponent extends React.Component {
 
 #+END_SRC
 
-(There)
+(There are several other valid approaches I won't get into detail in here for)
 
 Components can accept inputs from the outside world, called _props_ . They can also maintain their own internal _state_.  Components are typically
 built to have simple, well defined interfaces, and be inherently composable within an app hierarchy.
@@ -74,8 +75,8 @@ built to have simple, well defined interfaces, and be inherently composable with
 You will see in the LensTodo.tsx that the app is itself a component that is composed of several Lens components.
 
 *** Challenges
-[ ] Look at the Lens docs and instantiate a few more components inside the Card. Try different inputs to see what they do.
-[ ] The LensTodo app is wrapped inside a `ThemeProvider` component which has a reference to a theme. 
+- [ ] Look at the Lens docs and instantiate a few more components inside the Card. Try different inputs to see what they do.
+- [ ] The LensTodo app is wrapped inside a `ThemeProvider` component which has a reference to a theme. 
       The theme itself has several defined palettes.  Try and change the background of the page by applying a `bg` prop to the top most `Flex` component in the component.
 
 * Todo 3: List todos
