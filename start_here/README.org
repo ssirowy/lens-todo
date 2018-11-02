@@ -32,7 +32,7 @@ If all goes well you should see something that looks like this:
 * Todo 2: Get your bearings and have a look around
 I used a very helpful tool called [[https://github.com/facebook/create-react-app][Create React app]] to set up the basic React app skeleton for me and I chose to use Typescript.  The tool
 sets up a simple directory structure all of our code will go under the `src` directory.  Have a look in there.  I have provided some sample code
-you can start looking at.
+you can start looking at and modifying.
 
 *** Main source files
 **** src/index.tsx
@@ -48,10 +48,10 @@ you can start looking at.
 
 
 *** React apps
-There are much [[https://reactjs.org/][better treatments]] of what React is and how to build and render components, but here some basics.
+There are much [[https://reactjs.org/][better treatments]] of what React is and how to build, render, and compose components together, but here some basics.
 
-React is a small library that makes it easy to build UI components.  For those familiar with the MVC architecture,  
-React acts as the (V)iew layer. React provides a few simple mechanisms for defining how your component
+React is a small library that makes it easy to build UI components. For those familiar with the MVC architecture,
+React acts as the (V)iew layer. React provides a few simple approaches for defining how your component
 should be rendered.  One way is to create a Javscript class, like so:
 
 #+BEGIN_SRC javascript
@@ -66,8 +66,17 @@ class MyComponent extends React.Component {
 
 #+END_SRC
 
-*** Lens components
-[[https://lens.looker.com/][Look at Lens docs]] and try and add a few other components.  Try and instantiate those components with different 
+(There)
+
+Components can accept inputs from the outside world, called _props_ . They can also maintain their own internal _state_.  Components are typically
+built to have simple, well defined interfaces, and be inherently composable within an app hierarchy.
+
+You will see in the LensTodo.tsx that the app is itself a component that is composed of several Lens components.
+
+*** Challenges
+- [ ] Look at the Lens docs and instantiate a few more components inside the Card. Try different inputs to see what they do.
+- [ ] The LensTodo app is wrapped inside a `ThemeProvider` component which has a reference to a theme. 
+      The theme itself has several defined palettes.  Try and change the background of the page by applying a `bg` prop to the top most `Flex` component in the component.
 
 * Todo 3: List todos
 Fill me in
