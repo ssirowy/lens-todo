@@ -4,8 +4,8 @@
 
 * App goals
 
-A todo is a simple data structure that includes what needs to be done, whether it iss completed, and if completed, when it was completed.
-Your app should allow us to manage us a series of todos.
+A todo is a simple data structure that includes what needs to be done, whether it is completed, and if completed, when it was completed.
+Your app should allow users to manage us a series of todos.
 
 Your app should support the following features:
 1. List active todos.
@@ -19,7 +19,7 @@ defined interfaces that can be composed together.  We will talk about this as pa
 * Todo 1: Setting up skeleton project
 
 ** Install Yarn
-[[https://yarnpkg.com/en/][Yarn]] must be installed.  If yo don't have yarn installed , have a look at [[https://yarnpkg.com/en/docs/install][here]] and choose the appropriate installation for your environment.
+[[https://yarnpkg.com/en/][Yarn]] must be installed.  If you don't have yarn installed , have a look at [[https://yarnpkg.com/en/docs/install][here]] and choose the appropriate installation for your environment.
 
 ** Configure gradle.properties file
 Lens needs to connect to Looker's private npm registry, powered by Nexus. Lens has some scripts that take care of this setup automatically,
@@ -50,7 +50,7 @@ you can start looking at and modifying.
 
 *** Main source files
 **** src/index.tsx
-   This was generated for me and instantiates our app.
+   This was generated for me and instantiates our app. You likely wont have to touch this, but you can see how your app is created.
 **** src/components/LensTodo.tsx
    This file was initially generated and I have changed to illustrate some really basic usage of how to render a component and basic Lens component usage.
 **** src/components/LensTodo.css
@@ -76,7 +76,7 @@ should be rendered.  Here are a couple ways to build a simple greeting component
   * of their input
   */
 const Greeting = ({ name }) =>
-  <h1>Greetings {name} </h1?
+  <h1>Greetings {name} </h1>
 
 /**
   * Class based approach. Useful when you may need to maintin internal state
@@ -89,6 +89,10 @@ class Greeting extends React.Component {
   }
 }
 
+
+// Here is how the component might be instantiated...
+<Greeting name="Scott" />
+
 #+END_SRC
 
 (There are several other valid approaches I won't get into detail in here for)
@@ -98,14 +102,14 @@ built to have simple, well defined interfaces, and be inherently composable with
 
 You will see in the LensTodo.tsx that the app is itself a component that is composed of several Lens components.
 
-*** Challenges
-- Look at the Lens docs and instantiate a few more components inside the Card. Try different inputs to see what they do.
-- The LensTodo app is wrapped inside a `ThemeProvider` component which has a reference to a theme.
-  The theme itself has several defined palettes.  Try and change the background of the page by applying a `bg` prop to the top most `Flex` component in the component.
+
+1. Look at the Lens docs and instantiate a few more components inside the Card. Try different inputs to see what they do.
+2. The LensTodo app is wrapped inside a `ThemeProvider` component which has a reference to a theme.
+   The theme itself has several defined palettes.  Try and change the background of the page by applying a `bg` prop to the top most `Flex` component in the component.
 
 * Todo 3: List todos
 
-To get started,  notice that the app already has a list of todo Items.
+To get started,  notice that the app already has a list of todo items.
 
 #+BEGIN_SRC javascript
 
@@ -118,21 +122,30 @@ this.state = {
 
 #+END_SRC
 
-1. In the app's render method,  try and output the first todo item's text.
-2. Try the second.
-3. Can you figure out how to output all of them?
-4. Once you've figured that out,  start considering how you can build a component that accepts an array of todos and lists all of them.  This will
-come in handy when we show both active and completed todo items in separate lists.
+
+1. In the app's render method, try and output the first todo item's text. Try the second.
+2. Can you figure out how to output all of them?
+3. Once you've figured that out, start considering how you can build a component that accepts an array of todos and lists all of them.  
+   This will come in handy when we show both active and completed todo items in separate lists.
 
 #+BEGIN_SRC javascript
 
 class TodoList extends React.Component {
   render() {
     return (
-       // Something
+       // I suggest looking into Lens's components to help you compose this.
     )
   }
 }
+
+class TodoElement extends React.Component {
+  render() {
+    return (
+       // I suggest looking into Lens' ListItem components to help you compose this.
+    )
+  }
+}
+
 
 #+END_SRC
 
@@ -155,9 +168,10 @@ public updateTodo = (id: number, completed: boolean, on?: Date) => {
 export type UpdateTodoCallback = (id: number, completed: boolean, when?: Date) => void
 #+END_SRC
 
-2. Pass thids method into your todo list (and any other needed subcomponents)
-3. In your todo list items, add a Lens checkbox to the left of the todo text that when checked,
-   will call up to toggle its completeness.
+1. Pass thids method into your todo list (and any other needed subcomponents)
+2. In your todo list items, add a Lens checkbox to the left of the todo text that when checked,
+   will call up to toggle its completeness.  If the todo item is completed, also pass a new Date object
+   up to log when it was complete.
 
 * Todo 6: Filter todos
 Separate full list of todos into two distinct lists, one set of active todos and one set of completed todos.

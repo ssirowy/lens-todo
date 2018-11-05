@@ -7,10 +7,10 @@
 - Apply Looker's Lens library to provide a nice consistent styling for your todo app. (Bonus points if you *only* use Lens components)
 - Learn about some basic state management techniques by applying the Redux pattern to your todo app.
 
-** You should try and build a todo app that supports the following features:
+** Todo app features
 1. List active todos.
 2. Complete todos by clicking on them (or using a checkbox). Remove todo from active list when completed.
-3. Be able to see completed todos. Show the date when the todo was completed.
+3. List completed todos when user wants to. Show the date when the todo was completed.
 4. Remove todos that you are mistakes and/or want cleared from list.
 
 ** Structure
