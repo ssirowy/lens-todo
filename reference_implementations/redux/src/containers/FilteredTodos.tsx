@@ -6,14 +6,17 @@ import {
 } from '../utils/actions'
 import { Todo, Todos } from '../utils/todo_utils'
 
+// Component interface
 interface FilterTodoProps {
   completed: boolean
 }
 ​
+// Show todos that map to the prop passed in.
 const mapStateToProps = ( state: any, props: FilterTodoProps) => ({
   todos: state.todos.filter((todo: Todo) => todo.completed === props.completed) as Todos
 })
 ​
+// Dispatch props
 const mapDispatchToProps = (dispatch: any) => ({
   removeTodo: (id: number) => {
     dispatch(removeTodo(id))
@@ -23,6 +26,7 @@ const mapDispatchToProps = (dispatch: any) => ({
   },
 })
 ​
+// Filteredtodos container
 export const FilteredTodos = connect(
   mapStateToProps,
   mapDispatchToProps

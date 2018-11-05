@@ -33,7 +33,6 @@ Here a few helpful references for you as you build out your todo app.
 3. [[https://redux.js.org/][Redux]] - One of many state management tools you might choose to make your app more predictable and robust.  I have provided a reference app using Redux if you are interested.
 4. [[https://www.youtube.com/watch?v=34_L7t7fD_U][Simple made easy]] - Not directly related to this project,  but you should strive to make your components and app simple. Learn about what that means here.
 
-
 ** Helpful Chrome extensions
 The community has developed a number of very helpful Chrome developer extensions to help you with React development.  Here are some:
 

@@ -12,8 +12,6 @@ import {
   Form
 } from 'looker-lens'
 
-/* tslint:disable */
-
 interface AddTodoProps {
   dispatch: any
 }
@@ -60,9 +58,9 @@ class AddTodoComponent extends React.Component<AddTodoProps, AddTodoState> {
     const disabled = this.state.input.trim().length === 0
 
     const textProps = {
+      onChange: this.onChange,
       placeholder: 'Add a todo...',
       value: this.state.input,
-      onChange: this.onChange
     }
 
     return (

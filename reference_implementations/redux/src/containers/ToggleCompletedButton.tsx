@@ -3,7 +3,8 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 import { toggleCompleted } from '../utils/actions'
 import { Todo } from '../utils/todo_utils'
-​
+
+​// State -> Props
 const mapStateToProps = ( state: any, props: any) => {
   return {
     disabled: state.todos.filter((todo: Todo) => todo.completed ).length === 0,
@@ -11,6 +12,7 @@ const mapStateToProps = ( state: any, props: any) => {
   }
 }
 ​
+// Dispatch -> props
 const mapDispatchToProps = (dispatch: any) => {
   return {
     onClick: () => {
@@ -19,12 +21,14 @@ const mapDispatchToProps = (dispatch: any) => {
   }
 }
 
+// Component interface
 interface ToggleProps {
   text: string,
   disabled: boolean,
   onClick: any
 }
 
+// Wraps a Lens button
 const ButtonContainer = (props: ToggleProps) => {
   return (
     <Button variant="transparent"
@@ -36,4 +40,5 @@ const ButtonContainer = (props: ToggleProps) => {
   )
 }
 ​
+// Toggle button container
 export const ToggleCompletedButton = connect(mapStateToProps, mapDispatchToProps)(ButtonContainer)
