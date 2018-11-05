@@ -25,7 +25,9 @@ const defaultState = {
   todos: todoItems.map(todoFromStr),
 }
 
-const store = createStore(appReducers, defaultState)
+const store = createStore(appReducers,
+                          defaultState,
+                          (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render(
   <Provider store={store}>

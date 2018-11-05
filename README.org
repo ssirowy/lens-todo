@@ -40,7 +40,9 @@ allows you to inspect and change passed in props, and a number of ther things
 
 [[./images/react-dev-tools.png]]
 
-2.
+[[https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en][2. Redux dev tools]] -  Provides a new tab to watch, inspect,  and change actions in your Redux state tree.
+
+[[./images/redux-dev-tools.png]]
 
 
 ** Ready to begin?
