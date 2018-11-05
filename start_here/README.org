@@ -143,7 +143,7 @@ this.state = {
 
 1. In the app's render method, try and output the first todo item's text. Try the second.
 2. Can you figure out how to output all of them?
-3. Once you've figured that out, start considering how you can build a component that accepts an array of todos and lists all of them.  
+3. Once you've figured that out, start considering how you can build a component that accepts an array of todos and lists all of them.
    This will come in handy when we show both active and completed todo items in separate lists.
 4. Use your new component in top level app and pass all todos to it to be rendered.
 
@@ -279,31 +279,35 @@ Here is what it might look like after showing filtered todos:
 
 [[../images/different-lists.png]]
 
-* Todo 7: State management?
+* Todo 7: State management
 
 So far we've been managing our state in the app level component, distributing aspects of that state through
-various properties (props) on subcomponents and then passing callbacks up to augment the state.
+various properties (props) on subcomponents,  and then passing callbacks up to augment the state.
 
-For a small app, this may be a perfectly suitable way to do things (and likely recommended)
+For a small app, this may be a perfectly suitable way to do things (and maybe even recommended)
 
-But what happens as our app gets bigger?  We have larger and larger sub component trees? We need to make async calls
-to a server to update our todo lists?  You can imagine that the approach we've taken so far may get unwieldy, and makes it
+But what happens as:
+-  our app gets bigger and more complex?
+-  our app  has larger and larger sub component trees that we need to pass properties up and down?
+-  our app needs to make async calls to save our lists?  Who makes those calls?
+
+You can imagine that the approach we've taken so far may get unwieldy, and makes it
 hard to reason about various interconnected behaviors, actions, etc.
 
 Managing app state in a sane way is a hard problem, although plenty of patterns and solutions exist.
 Choosing one should take into account a variety of factors.
 
 One such pattern is the [[https://redux.js.org/][Redux]] pattern. Redux comes from a family of state mangement patterns (it is inspired by Flux)
-that help developers create and maintain a predictable state container for their app.  The basic idea is that any part of the 
-application can dispatch "actions" to indirectly manipulate a global app state. Those actions are then use to "compute" the next 
-app state using pure functional techniques.  
+that help developers create and maintain a predictable state container for their app.
+
+The basic idea is that any part of the application can dispatch "actions" to indirectly manipulate a global app state.
+Those actions are then use to "compute" the next app state using pure functional techniques.
 
 I'm not going to write any more about Redux here because they provide a much better treatment on their website.
 
-And, it just so happens that the Redux tutorial targets a simple todo app, should be relatively 
+And, it just so happens that the Redux tutorial targets a simple todo app, should be relatively
 straightforward to follow, and then subsequently augment your app to use.  It might be argued that such a simple
-app doesnt need something as "heavy" as Redux,  but for learning purposes I think its a great way to learn about 
+app doesnt need something as "heavy" as Redux,  but for learning purposes I think its a great way to learn about
 the basic patterns.
 
-1. Go through the [[https://redux.js.org/][Redux tutorial]] and refactor your app to use the Redux state management pattern.  
-
+1. Go through the [[https://redux.js.org/basics][Redux tutorial]] and refactor your app to use the Redux state management pattern.
