@@ -173,6 +173,8 @@ Once you are done,  you should see all of your todo items in a nice list:
 
 * Todo 4: Create new todos
 
+FILL ME IN. 
+
 [[../images/add-todos.png]]
 
 * Todo 5: Complete todos
@@ -199,9 +201,6 @@ export type UpdateTodoCallback = (id: number, completed: boolean, when?: Date) =
    - Add the date next the item in the todo list element.
    - For a completed todo, cross out the item.  Here is some CSS to use:
 
-
-Here is a completed todo item.  I used Moment to show a relative date, but you certainly don't have to do that:
-
 #+BEGIN_SRC css
 
 .completed {
@@ -209,6 +208,8 @@ Here is a completed todo item.  I used Moment to show a relative date, but you c
 }
 
 #+END_SRC
+
+Here is a completed todo item.  I used Moment to show a relative date, but you certainly don't have to do that:
 
 [[../images/completed-todo.png]]
 
