@@ -148,8 +148,7 @@ this.state = {
 4. Use your new component in top level app and pass all todos to it to be rendered.
 
 #+BEGIN_SRC javascript
-
-
+/** TodoList.tsx */
 // Sugested todo list interface
 interface TodoListProps {
   todos: Todos,
@@ -164,7 +163,10 @@ export class TodoList extends React.Component<TodoListProps, {}> {
   }
 }
 
+#+END_SRC
 
+#+BEGIN_SRC javascript
+/** TodoElement.tsx */
 // Suggested todo element interface
 interface TodoElementProps {
   todo: Todo,
@@ -200,6 +202,8 @@ public addTodo = (what: string) => {
 
 #+BEGIN_SRC javascript
 
+/** AddTodo.tsx */
+
 // Defined in src/utils/todo_utils.ts
 export type AddTodoCallback = (todo: string) => void
 
@@ -232,12 +236,9 @@ Support the ability to complete todos.  This effectively means asserting the `co
 
 // Add this to to your LensTodo.tsx component.
 public updateTodo = (id: number, completed: boolean, on?: Date) => {
-....
-// this.setState(someNewStateOfTheWorld)
+  ...
+  // this.setState(someNewStateOfTheWorld)
 }
-
-// utils/todo_utils also defines a callback type you can use in other places too
-export type UpdateTodoCallback = (id: number, completed: boolean, when?: Date) => void
 #+END_SRC
 
 1. Implement a handler in your top level todo app that accepts a todo ID and some new state and updates app state.
