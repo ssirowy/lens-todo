@@ -127,6 +127,7 @@ this.state = {
 2. Can you figure out how to output all of them?
 3. Once you've figured that out, start considering how you can build a component that accepts an array of todos and lists all of them.  
    This will come in handy when we show both active and completed todo items in separate lists.
+4. Use your new component in top level app and pass all todos to it to be rendered.
 
 #+BEGIN_SRC javascript
 
@@ -146,18 +147,22 @@ class TodoElement extends React.Component {
   }
 }
 
-
 #+END_SRC
 
-5. Use your new component in top level app and pass all todos to it to be rendered.
-
 * Todo 4: Create new todos
+
+
+
+
+
 Fill me in
+
+
+
+
 
 * Todo 5: Complete todos
 Support the ability to complete todos.  This effectively means asserting the `completed` value on any given todo.
-
-1.  Implement a handler in your top level todo app that has the following signature:
 
 #+BEGIN_SRC javascript
 public updateTodo = (id: number, completed: boolean, on?: Date) => {
@@ -168,10 +173,23 @@ public updateTodo = (id: number, completed: boolean, on?: Date) => {
 export type UpdateTodoCallback = (id: number, completed: boolean, when?: Date) => void
 #+END_SRC
 
-1. Pass thids method into your todo list (and any other needed subcomponents)
-2. In your todo list items, add a Lens checkbox to the left of the todo text that when checked,
+1. Implement a handler in your top level todo app that has the following signature:
+2. Pass thids method into your todo list (and any other needed subcomponents)
+3. In your todo list items, add a Lens checkbox to the left of the todo text that when checked,
    will call up to toggle its completeness.  If the todo item is completed, also pass a new Date object
    up to log when it was complete.
+4. For a completed item,  
+   - Add the date next the item in the todo list element.
+   - For a completed todo, cross out the item.  Here is some CSS to use:
+
+#+BEGIN_SRC css
+
+.completed {
+  color: #939BA5;
+  text-decoration: line-through;
+}
+
+#+END_SRC
 
 * Todo 6: Filter todos
 Separate full list of todos into two distinct lists, one set of active todos and one set of completed todos.

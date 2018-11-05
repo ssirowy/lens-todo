@@ -32,5 +32,16 @@ Here a few helpful references for you as you build out your todo app.
 4. [[https://www.youtube.com/watch?v=34_L7t7fD_U][Simple made easy]] - Not directly related to this project,  but you should strive to make your components and app simple. Learn about what that means here.
 
 
+** Helpful Chrome extensions
+The community has developed a number of very helpful Chrome developer extensions to help you with React development.  Here are some:
+
+[[https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en][1. React developer tools]] - Provides a new tab in your Chrome dev tools that shows you a component tree of your app,
+allows you to inspect and change passed in props, and a number of ther things
+
+[[./images/react-dev-tools.png]]
+
+2.
+
+
 ** Ready to begin?
 [[./start_here/README.org][Click here]]
