@@ -19,7 +19,7 @@ defined interfaces that can be composed together.  We will talk about this as pa
 * Todo 1: Setting up skeleton project
 
 ** Install Yarn
-[[https://yarnpkg.com/en/][pYarn]] must be installed.  If yo don't have yarn installed , have a look at [[https://yarnpkg.com/en/docs/install][here]] and choose the appropriate installation for your environment.
+[[https://yarnpkg.com/en/][Yarn]] must be installed.  If yo don't have yarn installed , have a look at [[https://yarnpkg.com/en/docs/install][here]] and choose the appropriate installation for your environment.
 
 ** Configure gradle.properties file
 Lens needs to connect to Looker's private npm registry, powered by Nexus. Lens has some scripts that take care of this setup automatically,
@@ -51,9 +51,9 @@ you can start looking at and modifying.
 *** Main source files
 **** src/index.tsx
    This was generated for me and instantiates our app.
-**** src/LensTodo.tsx
+**** src/components/LensTodo.tsx
    This file was initially generated and I have changed to illustrate some really basic usage of how to render a component and basic Lens component usage.
-**** src/LensTodo.css
+**** src/components/LensTodo.css
    I tried to keep my CSS usage down to a mininum to see what Lens provides out of the box, but in cerain cases I needed a little more flexibility.
    Try and make use of Lens default stylings as much as you can as you build.
 **** src/utils/todo_utils.ts
@@ -67,14 +67,24 @@ There are much [[https://reactjs.org/][better treatments]] of what React is and 
 
 React is a small library that makes it easy to build UI components. For those familiar with the MVC architecture,
 React acts as the (V)iew layer. React provides a few simple approaches for defining how your component
-should be rendered.  One way is to create a Javscript class, like so:
+should be rendered.  Here are a couple ways to build a simple greeting component that renders someone's name
 
 #+BEGIN_SRC javascript
 
-class MyComponent extends React.Component {
+/**
+  * Pure functional based approach. Useful when building components that are only the product
+  * of their input
+  */
+const Greeting = ({ name }) =>
+  <h1>Greetings {name} </h1?
+
+/**
+  * Class based approach. Useful when you may need to maintin internal state
+  */
+class Greeting extends React.Component {
   render() {
     return (
-       <h1>My first React component</h1>
+       <h1>Greetings {this.props.name}</h1>
     )
   }
 }
@@ -108,9 +118,10 @@ this.state = {
 
 #+END_SRC
 
-In the app's render method,  try and output the first todo item's text.  Try the second.  Can you figure out how to output all of them?
-
-Once you've figured that out,  start considering how you can build a component that accepts an array of todos and lists all of them.  This will
+1. In the app's render method,  try and output the first todo item's text.
+2. Try the second.
+3. Can you figure out how to output all of them?
+4. Once you've figured that out,  start considering how you can build a component that accepts an array of todos and lists all of them.  This will
 come in handy when we show both active and completed todo items in separate lists.
 
 #+BEGIN_SRC javascript
@@ -125,14 +136,38 @@ class TodoList extends React.Component {
 
 #+END_SRC
 
+5. Use your new component in top level app and pass all todos to it to be rendered.
+
 * Todo 4: Create new todos
 Fill me in
 
 * Todo 5: Complete todos
-Fill me in
+Support the ability to complete todos.  This effectively means asserting the `completed` value on any given todo.
+
+1.  Implement a handler in your top level todo app that has the following signature:
+
+#+BEGIN_SRC javascript
+public updateTodo = (id: number, completed: boolean, on?: Date) => {
+....
+}
+
+// utils/todo_utils also defines a callback type you can use in other places too
+export type UpdateTodoCallback = (id: number, completed: boolean, when?: Date) => void
+#+END_SRC
+
+2. Pass thids method into your todo list (and any other needed subcomponents)
+3. In your todo list items, add a Lens checkbox to the left of the todo text that when checked,
+   will call up to toggle its completeness.
 
 * Todo 6: Filter todos
-Fill me in
+Separate full list of todos into two distinct lists, one set of active todos and one set of completed todos.
+
+1. Add a button below todo list that when clicked, toggles the `showCompleted` state value.
+2. Show appropriate text on the button dependent on the state. (e.g. Show/Hide)
+3. Filter the todos so the first todo list only shows non completed todos
+4. Add a second todo list below the button that only renders when `showCompleted` is true.
+5. Pass in the completed todos to this second list.
+6. If everything is wired up correctly, you should be able toggle todos and see them move betweent the lists.
 
 * Todo 7: State management?
 Fill me in
