@@ -22,7 +22,7 @@ to get get going
 
 This top level directory also includes a few reference implementations of the todo app that you can use if you get
 stuck. I do provide a disclaimer that I wrote thenm fairly quickly and do not guarantee they will be production
-quality. I have tried to document my code as much as possible for educational purposes.  If yuo find any glaring errors,
+quality. I have tried to document my code as much as possible for educational purposes.  If you find any glaring errors,
 please let me know!
 
 ** Helpful references
@@ -37,13 +37,13 @@ Here a few helpful references for you as you build out your todo app.
 The community has developed a number of very helpful Chrome developer extensions to help you with React development.  Here are some:
 
 [[https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en][1. React developer tools]] - Provides a new tab in your Chrome dev tools that shows you a component tree of your app,
-allows you to inspect and change passed in props, and a number of ther things
+allows you to inspect and change passed in props, and a number of other things
 
 [[./images/react-dev-tools.png]]
 
 If you get a chance to try and implement a Redux-based state tree,  then:
 
-[[https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en][2. Redux dev tools]] -  Provides a new tab to watch, inspect,  and change actions in your Redux state tree.
+[[https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en][2. Redux dev tools]] -  Provides a new tab to watch, inspect, and change actions in your Redux state tree.
 
 [[./images/redux-dev-tools.png]]
 
