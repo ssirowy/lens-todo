@@ -5,7 +5,20 @@
 * App goals
 
 A todo is a simple data structure that includes what needs to be done, whether it is completed, and if completed, when it was completed.
-Your app should allow users to manage us a series of todos.
+Here is a basic interface (defined in `src/utils/todo_utils)
+
+#+BEGIN_SRC javascript
+
+interface Todo {
+  id: number,
+  what: string,
+  completed: boolean,
+  on?: Date
+}
+
+#+END_SRC
+
+Your app should allow users to manage us a series of these todo items.
 
 Your app should support the following features:
 1. List active todos.
@@ -53,6 +66,7 @@ you can start looking at and modifying.
    This was generated for me and instantiates our app. You likely wont have to touch this, but you can see how your app is created.
 **** src/components/LensTodo.tsx
    This file was initially generated and I have changed to illustrate some really basic usage of how to render a component and basic Lens component usage.
+   This is our main app level component.
 **** src/components/LensTodo.css
    I tried to keep my CSS usage down to a mininum to see what Lens provides out of the box, but in cerain cases I needed a little more flexibility.
    Try and make use of Lens default stylings as much as you can as you build.
@@ -60,7 +74,7 @@ you can start looking at and modifying.
    I have provided a number of todo utilities you might find useful, including helpful interfaces of a Todo item, an interface for our app state, and a
    a variety of other items.
 **** src/utils/todo_items.ts
-   Here is the data to initially drive the todo list. It just so happens to be potential ordering for how to go about attacking building your app.
+   Here is the data to initially drive the todo list. It just so happens to be potential ordering for how to go about building your app.
 
 *** React apps
 There are much [[https://reactjs.org/][better treatments]] of what React is and how to build, render, and compose components together, but here some basics.
@@ -116,7 +130,11 @@ To get started,  notice that the app already has a list of todo items.
 // Initial state of app. This can come from anything (e.g local storage, a server call, etc)
 // but for simplicity we will simply set here every time we start app.
 this.state = {
+
+  // Show completed todos or not
   showCompleted: false,
+
+  // List of todo objects.
   todos: todoItems.map(todoFromStr),
 }
 
@@ -149,47 +167,50 @@ class TodoElement extends React.Component {
 
 #+END_SRC
 
+Once you are done,  you should see all of your todo items in a nice list:
+
+[[../images/list-of-todos.png]]
+
 * Todo 4: Create new todos
 
-
-
-
-
-Fill me in
-
-
-
-
+[[../images/add-todos.png]]
 
 * Todo 5: Complete todos
 Support the ability to complete todos.  This effectively means asserting the `completed` value on any given todo.
 
 #+BEGIN_SRC javascript
+
+// Add this to to your LensTodo.tsx component.
 public updateTodo = (id: number, completed: boolean, on?: Date) => {
 ....
+// this.setState(someNewStateOfTheWorld)
 }
 
 // utils/todo_utils also defines a callback type you can use in other places too
 export type UpdateTodoCallback = (id: number, completed: boolean, when?: Date) => void
 #+END_SRC
 
-1. Implement a handler in your top level todo app that has the following signature:
+1. Implement a handler in your top level todo app that accepts a todo ID and some new state and updates app state.
 2. Pass thids method into your todo list (and any other needed subcomponents)
 3. In your todo list items, add a Lens checkbox to the left of the todo text that when checked,
-   will call up to toggle its completeness.  If the todo item is completed, also pass a new Date object
+   will call up to toggle its completeness. If the todo item is completed, also pass a new Date object
    up to log when it was complete.
-4. For a completed item,  
+4. For a completed item,
    - Add the date next the item in the todo list element.
    - For a completed todo, cross out the item.  Here is some CSS to use:
+
+
+Here is a completed todo item.  I used Moment to show a relative date, but you certainly don't have to do that:
 
 #+BEGIN_SRC css
 
 .completed {
-  color: #939BA5;
   text-decoration: line-through;
 }
 
 #+END_SRC
+
+[[../images/completed-todo.png]]
 
 * Todo 6: Filter todos
 Separate full list of todos into two distinct lists, one set of active todos and one set of completed todos.

@@ -1,4 +1,4 @@
-* React/Lens TODO app
+* Build a TODO app using React and Lens
 
 [[./images/app.png]]
 
@@ -12,6 +12,8 @@
 2. Complete todos by clicking on them (or using a checkbox). Remove todo from active list when completed.
 3. List completed todos when user wants to. Show the date when the todo was completed.
 4. Remove todos that you are mistakes and/or want cleared from list.
+
+[[http://lens-todo.s3-website-us-west-2.amazonaws.com/][Here is a reference implementation of the app.  You can use to help guide your design choices, but feel free to take creative license.]]
 
 ** Structure
 This top level directory has a few directories.  The directory `start_here` includes a skeleton project
@@ -39,6 +41,8 @@ The community has developed a number of very helpful Chrome developer extensions
 allows you to inspect and change passed in props, and a number of ther things
 
 [[./images/react-dev-tools.png]]
+
+If you get a chance to try and implement a Redux-based state tree,  then:
 
 [[https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en][2. Redux dev tools]] -  Provides a new tab to watch, inspect,  and change actions in your Redux state tree.
 
