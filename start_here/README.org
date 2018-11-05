@@ -149,7 +149,14 @@ this.state = {
 
 #+BEGIN_SRC javascript
 
-class TodoList extends React.Component {
+
+// Sugested todo list interface
+interface TodoListProps {
+  todos: Todos,
+}
+
+// Implements a component with defined props and no state
+export class TodoList extends React.Component<TodoListProps, {}> {
   render() {
     return (
        // I suggest looking into Lens's components to help you compose this.
@@ -157,7 +164,13 @@ class TodoList extends React.Component {
   }
 }
 
-class TodoElement extends React.Component {
+
+// Suggested todo element interface
+interface TodoElementProps {
+  todo: Todo,
+}
+
+export class TodoElement extends React.Component<TodoElementProps, {}> {
   render() {
     return (
        // I suggest looking into Lens' ListItem components to help you compose this.
@@ -172,8 +185,43 @@ Once you are done,  you should see all of your todo items in a nice list:
 [[../images/list-of-todos.png]]
 
 * Todo 4: Create new todos
+Support the ability to add new todos to the list.  Uop to you if you feel the news todos should go to the bottom or top of list.
 
-FILL ME IN. 
+#+BEGIN_SRC javascript
+
+// Add this to your app level component
+public addTodo = (what: string) => {
+  // Add a new todo item to the state object in here.  Use the `todoFromStr` helper to build a quick todo object.
+}
+#+END_SRC
+
+1.  Implement above method in app component.
+2.  Create a new `AddTodo` component that composes an input and button. Below is a sample stub for you to start with
+
+#+BEGIN_SRC javascript
+
+// Defined in src/utils/todo_utils.ts
+export type AddTodoCallback = (todo: string) => void
+
+// Component interface.
+interface AddTodoProps {
+  addTodo: AddTodoCallback
+}
+
+interface AddTodoState {
+  input: string
+}
+
+export class AddTodo extends React.Component<AddTodoProps, AddTodoState> { ... }
+
+#+END_SRC
+
+3. Notice you will likely have to implement some basic state in this component to track what the input has.
+4. Instantiate AddTodo component to app and wire to add method from step 1.
+5. Make sure when you add one the new element gets rendered in todo list.
+
+
+Here is what it might look look when using Lens components and connected in.
 
 [[../images/add-todos.png]]
 
