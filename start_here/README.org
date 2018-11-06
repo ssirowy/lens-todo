@@ -45,6 +45,10 @@ If you have Helltool installed and running, you've likely already setup your gra
 ** Clone this Repository and setup
 #+BEGIN_SRC bash
 git clone git@github.com:ssirowy/lens-todo.git
+<<<<<<< HEAD
+=======
+cd lens-todo/start_here/
+>>>>>>> Using README as slides.
 yarn npmrc
 yarn
 yarn start

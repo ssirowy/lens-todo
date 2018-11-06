@@ -1,20 +1,27 @@
-* Build a TODO app using React and Lens
+#+TITLE: Build a todo app in React and Lens
+#+OPTIONS: reveal_title_slide:"<h1>%t</h1>"
+#+OPTIONS: reveal_rolling_links:t reveal_overview:t
+#+OPTIONS: num:nil toc:nil
+#+REVEAL_THEME: black
+
+* Todo app
 
 [[./images/app.png]]
 
 ** Goals
 - Learn how to build component-based React apps by building a fairly full featured todo app.
-- Apply Looker's Lens library to provide a nice consistent styling for your todo app. (Bonus points if you *only* use Lens components)
-- Learn about some basic state management techniques by applying the Redux pattern to your todo app.
+- Apply Looker's Lens library to provide a nice consistent styling (Bonus points if you *only* use Lens components)
+- Learn about some basic state management techniques by applying the Redux pattern.
 
-** Todo app features
+** Features
 1. List active todos.
 2. Complete todos by clicking on them (or using a checkbox). Remove todo from active list when completed.
 3. List completed todos when user wants to. Show the date when the todo was completed.
 4. Remove todos that you are mistakes and/or want cleared from list.
 
-[[http://lens-todo.s3-website-us-west-2.amazonaws.com/][Here is a reference implementation of the app.  You can use to help guide your design choices, but feel free to take creative license.]]
+[[http://lens-todo.s3-website-us-west-2.amazonaws.com/][Reference implementation]]
 
+* Miscellenanous stuff
 ** Structure
 This top level directory has a few directories.  The directory `start_here` includes a skeleton project
 where you will begin your work. There is a README in that subdirectory that will give you instructions on how
@@ -47,6 +54,5 @@ If you get a chance to try and implement a Redux-based state tree,  then:
 
 [[./images/redux-dev-tools.png]]
 
-
-** Ready to begin?
+* Ready to begin?
 [[./start_here/README.org][Click here]]
