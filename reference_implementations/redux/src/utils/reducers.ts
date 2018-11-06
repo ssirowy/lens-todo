@@ -29,20 +29,8 @@ export const todos = (state = [], action: any) => {
       return state.filter((t: Todo) => t.id !== action.id)
 
     case UPDATE_TODO:
-
       const { id, completed, on} = action
-      const index = state.findIndex((t: Todo) => t.id === id)
-      const todo = state.find((t: Todo) => t.id === id)
-
-      if (todo) {
-        const newState = [...state] as Todo[]
-        const newTodo = {...todo as Todo, completed, on}
-        newState[index] = newTodo
-        return newState
-      }
-      else {
-        return state
-      }
+      return state.map((t: Todo) => (t.id !== id ? t : { ...t, completed, on }))
 
     default:
       return state

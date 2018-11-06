@@ -58,27 +58,8 @@ export default class LensTodo extends React.Component<{}, TodoAppState> {
 
   // Handler when some state in a todo changes.
   public updateTodo = (id: number, completed: boolean, on?: Date) => {
-
-    // Find index of todo being modified
-    const index = this.state.todos.findIndex((t: Todo) => t.id === id)
-
-    // Get refernece to todo
-    const todo = this.state.todos.find((t: Todo) => t.id === id)
-
-    if (todo) {
-
-      // Create a new batch of todos
-      const todos = [...this.state.todos]
-
-      // Create a new version of todo with updated info
-      const newTodo = {...todo, completed, on}
-
-      // Update list with new one.
-      todos[index] = newTodo
-
-      // Finally update state.
-      this.setState({todos})
-    }
+    const todos = this.state.todos.map((t: Todo) => (t.id !== id ? t : { ...t, completed, on }))
+    this.setState({todos})
   }
 
   // Remove a given todo.
