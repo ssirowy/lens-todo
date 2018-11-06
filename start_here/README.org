@@ -18,13 +18,13 @@ interface Todo {
 
 #+END_SRC
 
-Your app should allow users to manage us a series of these todo items.
+Your app should allow users to manage a series of these todo items.
 
 Your app should support the following features:
 1. List active todos.
 2. Complete todos by clicking on them (or using a checkbox). Remove todo from active list when completed.
 3. Be able to see completed todos. Show the date when the todo was completed.
-4. Remove todos that you are mistakes and/or want cleared from list.
+4. Remove todos that are mistakes and/or you want cleared from list.
 
 There are a lot of ways to build this in React, but you should strongly consider figuring out to break this into simple components with well
 defined interfaces that can be composed together.  We will talk about this as part of the initial talk before starting.
@@ -32,7 +32,7 @@ defined interfaces that can be composed together.  We will talk about this as pa
 * Todo 1: Setting up skeleton project
 
 ** Install Yarn
-[[https://yarnpkg.com/en/][Yarn]] must be installed.  If you don't have yarn installed , have a look at [[https://yarnpkg.com/en/docs/install][here]] and choose the appropriate installation for your environment.
+[[https://yarnpkg.com/en/][Yarn]] must be installed.  If you don't have yarn installed , have a look [[https://yarnpkg.com/en/docs/install][here]] and choose the appropriate installation for your environment.
 
 ** Configure gradle.properties file
 Lens needs to connect to Looker's private npm registry, powered by Nexus. Lens has some scripts that take care of this setup automatically,
@@ -45,7 +45,6 @@ If you have Helltool installed and running, you've likely already setup your gra
 ** Clone this Repository and setup
 #+BEGIN_SRC bash
 git clone git@github.com:ssirowy/lens-todo.git
-cd start_here/
 yarn npmrc
 yarn
 yarn start
@@ -66,13 +65,13 @@ you can start looking at and modifying.
 **** src/index.tsx
    This was generated for me and instantiates our app. You likely wont have to touch this, but you can see how your app is created.
 **** src/components/LensTodo.tsx
-   This file was initially generated and I have changed to illustrate some really basic usage of how to render a component and basic Lens component usage.
+   This file was initially generated and I have changed it to illustrate some really basic usage of how to render a component and basic Lens component usage.
    This is our main app level component.
 **** src/components/LensTodo.css
-   I tried to keep my CSS usage down to a mininum to see what Lens provides out of the box, but in cerain cases I needed a little more flexibility.
+   I tried to keep my CSS usage down to a mininum to see what Lens provides out of the box, but in certain cases I needed a little more flexibility.
    Try and make use of Lens default stylings as much as you can as you build.
 **** src/utils/todo_utils.ts
-   I have provided a number of todo utilities you might find useful, including helpful interfaces of a Todo item, an interface for our app state, and a
+   I have provided a number of todo utilities you might find useful, including helpful interfaces of a Todo item, an interface for our app state, and
    a variety of other items.
 **** src/utils/todo_items.ts
    Here is the data to initially drive the todo list. It just so happens to be potential ordering for how to go about building your app.
@@ -112,7 +111,7 @@ class Greeting extends React.Component {
 
 (There are several other valid approaches I won't get into detail in here for)
 
-Components can accept inputs from the outside world, called _props_ . They can also maintain their own internal _state_.  Components are typically
+Components can accept inputs from the outside world, called _props_. They can also maintain their own internal _state_.  Components are typically
 built to have simple, well defined interfaces, and be inherently composable within an app hierarchy.
 
 You will see in the LensTodo.tsx that the app is itself a component that is composed of several Lens components.
