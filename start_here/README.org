@@ -94,7 +94,7 @@ const Greeting = ({ name }) =>
   <h1>Greetings {name} </h1>
 
 /**
-  * Class based approach. Useful when you may need to maintin internal state
+  * Class based approach. Useful when you may need to maintain internal state
   */
 class Greeting extends React.Component {
   render() {
