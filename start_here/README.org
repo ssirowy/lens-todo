@@ -298,7 +298,7 @@ hard to reason about various interconnected behaviors, actions, etc.
 Managing app state in a sane way is a hard problem, although plenty of patterns and solutions exist.
 Choosing one should take into account a variety of factors.
 
-One such pattern is the [[https://redux.js.org/][Redux]] pattern. Redux comes from a family of state mangement patterns (it is inspired by Flux)
+One such pattern is the [[https://redux.js.org/][Redux]] pattern. Redux comes from a family of state management patterns (it is inspired by Flux)
 that help developers create and maintain a predictable state container for their app.
 
 The basic idea is that any part of the application can dispatch "actions" to indirectly manipulate a global app state.
